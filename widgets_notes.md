@@ -585,3 +585,22 @@ In this example, the `GestureDetector` wraps a `Container`. When the `Container`
 2. `GestureDetector`: This is a non-visual widget that provides gesture recognition. It's more flexible than `InkWell` as it supports a wide range of gestures such as tap, double tap, long press, drag, and scale. However, unlike `InkWell`, it doesn't provide any visual feedback.
 
 In summary, if you need visual feedback such as a splash on touch, use `InkWell`. If you need to support a wide range of gestures and don't need the visual feedback, use `GestureDetector`.
+
+### IndexedStack widget in Flutter
+The `IndexedStack` widget in Flutter is a Stack that shows a single child from a list of children. The child that is displayed is determined by the `index` property.
+
+In the context of your code, the `IndexedStack` widget is used to switch between different pages in your application. The `index` property is tied to `_currentIndex`, which is updated when a new tab is selected in the `BottomNavigationBar`.
+
+Here's a simplified example of how `IndexedStack` works:
+
+```dart
+IndexedStack(
+  index: _currentIndex,
+  children: [
+    Text("First Page"),
+    Text("Second Page"),
+  ],
+)
+```
+
+In this example, if `_currentIndex` is `0`, "First Page" will be displayed. If `_currentIndex` is `1`, "Second Page" will be displayed.
