@@ -604,3 +604,39 @@ IndexedStack(
 ```
 
 In this example, if `_currentIndex` is `0`, "First Page" will be displayed. If `_currentIndex` is `1`, "Second Page" will be displayed.
+
+### `SafeArea` widget in Flutter?
+`SafeArea` is a widget in Flutter that insets its child by sufficient padding to avoid intrusions by the operating system. For example, this padding includes areas to avoid: the status bar at the top of the screen, the notch on iOS devices, the navigation bar at the bottom, and more.
+
+The primary purpose of `SafeArea` is to make your UI adaptable to various screen sizes and orientations without getting hidden by the system UI.
+
+Here's an example of how to use `SafeArea`:
+
+```dart
+SafeArea(
+  child: Text('Hello, World!'),
+)
+```
+
+In this example, the `Text` widget will be displayed in an area that avoids any system intrusions. This means it won't be hidden by the status bar, notch, navigation bar, etc.
+
+You can also customize the behavior of `SafeArea` by setting its properties:
+
+- `top`: If true, the padding includes enough padding to avoid the status bar at the top of the screen. Defaults to true.
+- `bottom`: If true, the padding includes enough padding to avoid the system nav bar at the bottom of the screen. Defaults to true.
+- `left`: If true, the padding includes enough padding to avoid intrusions on the left. Defaults to true.
+- `right`: If true, the padding includes enough padding to avoid intrusions on the right. Defaults to true.
+
+Here's an example of how to use these properties:
+
+```dart
+SafeArea(
+  top: true,
+  bottom: false,
+  left: true,
+  right: true,
+  child: Text('Hello, World!'),
+)
+```
+
+In this example, the `Text` widget will avoid intrusions from the top, left, and right, but not from the bottom.
