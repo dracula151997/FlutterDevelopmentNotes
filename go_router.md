@@ -1,3 +1,47 @@
+### What is the `go_router` package?
+It seems like you're asking about the Go router in the context of Flutter and Dart. The `go_router` package is a routing package for Flutter that uses declarative routing. It's not included in your `pubspec.yaml` file by default, so you'll need to add it manually.
+
+Here's how you can add it:
+
+1. Open your `pubspec.yaml` file.
+2. Under `dependencies`, add `go_router: ^2.4.0` (or the latest version).
+3. Save the file.
+4. Run `flutter pub get` in your terminal to fetch the package.
+
+Here's what your `dependencies` section should look like after adding `go_router`:
+
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  go_router: ^2.4.0
+```
+
+After adding the `go_router` package, you can use it in your Dart files by importing it:
+
+```dart
+import 'package:go_router/go_router.dart';
+```
+
+Then, you can define your routes and use the `GoRouter`:
+
+```dart
+final goRouter = GoRouter(
+  routes: [
+    GoRoute(
+      path: '/',
+      pageBuilder: (context, state) => MaterialPage<void>(
+        key: state.pageKey,
+        child: HomePage(),
+      ),
+    ),
+    // Add more routes here
+  ],
+);
+```
+
+Remember to replace `HomePage()` with your actual home page widget.
 
 ### Difference between `go` and `push` methods in `go_router` package
 In the context of Flutter and the `go_router` package, `context.go` and `context.push` are methods used for navigation between different routes in your application.
